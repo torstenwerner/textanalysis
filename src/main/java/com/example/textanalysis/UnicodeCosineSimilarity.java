@@ -6,8 +6,9 @@ import java.util.Map;
 
 /**
  * Unicode version of {@link org.apache.commons.text.similarity.CosineDistance}.
+ * Returns similarity instead of distance. Hence the name.
  */
-public class UnicodeCosineDistance {
+public class UnicodeCosineSimilarity {
     private final UnicodeRegexTokenizer tokenizer = new UnicodeRegexTokenizer();
     /**
      * Cosine similarity.
@@ -20,7 +21,6 @@ public class UnicodeCosineDistance {
 
         final Map<CharSequence, Integer> leftVector = Counter.of(leftTokens);
         final Map<CharSequence, Integer> rightVector = Counter.of(rightTokens);
-        final double similarity = cosineSimilarity.cosineSimilarity(leftVector, rightVector);
-        return 1.0 - similarity;
+        return cosineSimilarity.cosineSimilarity(leftVector, rightVector);
     }
 }

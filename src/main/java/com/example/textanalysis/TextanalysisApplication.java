@@ -14,9 +14,9 @@ public class TextanalysisApplication implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        final UnicodeCosineDistance cosineDistance = new UnicodeCosineDistance();
-        final Double distance = cosineDistance.apply("Hallo schöne Welt!", "Tschüss Welt!");
-        System.out.printf("cosine distance: %f%n", distance);
+        final UnicodeCosineSimilarity cosineSimilarity = new UnicodeCosineSimilarity();
+        final Double similarity = cosineSimilarity.apply("Hallo schöne Welt!", "Tschüss Welt!");
+        System.out.printf("cosine similarity: %f%n", similarity);
     }
 }
 
