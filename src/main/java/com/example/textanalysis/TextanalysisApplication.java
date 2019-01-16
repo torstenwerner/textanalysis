@@ -1,6 +1,5 @@
 package com.example.textanalysis;
 
-import org.apache.commons.text.similarity.CosineDistance;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,7 +14,7 @@ public class TextanalysisApplication implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        final CosineDistance cosineDistance = new CosineDistance();
+        final UnicodeCosineDistance cosineDistance = new UnicodeCosineDistance();
         final Double distance = cosineDistance.apply("Hallo schöne Welt!", "Tschüss Welt!");
         System.out.printf("cosine distance: %f%n", distance);
     }
